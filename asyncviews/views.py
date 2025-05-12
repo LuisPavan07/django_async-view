@@ -12,6 +12,5 @@ async def http_call_async():
         print(r)
 
 async def async_view(request):
-    loop = asyncio.get_event_loop()
-    loop.create_task(http_call_async())
+    await http_call_async()
     return HttpResponse("Hello World, welcome!")
